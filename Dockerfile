@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-CMD ["yarn", "install", "--frozen-lockfile", "--prod", "&&", "yarn", "build", "&&", "yarn", "start"]
+ENV NODE_ENV=production
+
+CMD ["bash", "run.sh"]
