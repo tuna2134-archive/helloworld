@@ -1,20 +1,13 @@
-FROM node:16 AS builder
+FROM node:lts-slim
+
 
 WORKDIR /app
 COPY package.json ./
 COPY yarn.lock ./
-RUN yarn install --frozen-lockfile --production=false
+RUN yarn install --frozen-lockfile --prod
+
 COPY . .
-RUN yarn build
+ENV NODE_ENV production
+EXPOSE 3000
 
-FROM node:16-stretch-slim AS runner
-ENV NODE_ENV=production
-
-WORKDIR /app
-COPY package.json ./
-COPY yarn.lock ./
-RUN yarn install --frozen-lockfile --production=true
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-CMD ["yarn", "start"]
+CMD ["yarn", "build", "&&", "yarn", "start"]
