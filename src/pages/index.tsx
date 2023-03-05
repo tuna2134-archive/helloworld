@@ -14,6 +14,15 @@ export default function Index() {
         <p className="mt-6">それはエンジニアたちが必ず目にする言葉</p>
         <p>このサイトは初心者がプログラミングを学習しながら、楽しくするためのサイトです。</p>
       </div>
+      <div className="mt-8">
+        <h2 className="text-3xl text-center">記事一覧</h2>
+        <div className="mx-[15%]">
+          <div>
+            <p className="text-2xl font-semibold">ハロー</p>
+            <small>概要だよ</small>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
