@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .omg {
+        min-height: calc(100% - 6.0rem);
+    }
+}

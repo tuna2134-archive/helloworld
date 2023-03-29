@@ -10,8 +10,8 @@ export default function Header() {
     "link": "/support",
   }];
   return (
-    <header>
-      <div className="flex justify-between mx-8 my-6">
+    <header className="sticky top-0 bg-white py-6 border-b">
+      <div className="flex justify-between mx-8">
         <div>
           <Link href="/" className="text-2xl font-semibold font-mono">Hello, World!</Link>
         </div>

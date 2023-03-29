@@ -6,7 +6,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Header />
-      <Component {...pageProps} />
+      <main className="omg">
+        <Component {...pageProps} />
+      </main>
+      <footer className="py-6">hello</footer>
     </>
   )
 }
